@@ -9,7 +9,7 @@ public interface TradeService {
 		Trade findById(int id);
 		Trade createTrade(Trade newtrade);
 		Trade updateTrade(Trade newTrade);
-		Void deleteTrade(int id);
+		void deleteTrade(int id);
 	}
 
 

@@ -10,9 +10,9 @@ public class Trade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
+	private int id;
 	
-	String name;
+	private String name;
 	
 	public Trade() {
 		

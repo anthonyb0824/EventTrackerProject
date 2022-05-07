@@ -1,6 +1,7 @@
 package com.skilldistillery.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,12 @@ public class TradeServiceImpl implements TradeService {
 
 	@Override
 	public Trade findById(int id) {
-		return tradeRepo.getById(id);
+		Optional<Trade> op = tradeRepo.findById(id);
+		if(op.isPresent()) {
+			return op.get();
+		}
+		 
+		 return null;
 	}
 
 	@Override
@@ -35,9 +41,8 @@ public class TradeServiceImpl implements TradeService {
 	}
 
 	@Override
-	public Void deleteTrade(int tradeId) {
+	public void deleteTrade(int tradeId) {
 		 tradeRepo.deleteById(tradeId);
-		return null;
 	}
 
 }

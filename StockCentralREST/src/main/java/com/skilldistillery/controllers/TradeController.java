@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,27 +28,23 @@ public class TradeController {
 	}
 	
 	@GetMapping("trades/{id}")
-	public Trade tradeById() {
-		//TODO:
-		return null;
-		//return serv.findById();
+	public Trade tradeById(@PathVariable int id) {
+		return serv.findById(id);
 	}
 	
 	@PostMapping("trades")
-	public Trade createTrade() {
-		//TODO:
-		return null;
+	public Trade createTrade(@RequestBody Trade newTrade) {
+		return serv.createTrade(newTrade);
 	}
 	
 	@PutMapping("trades/{id}")
-	public Trade updateTrade() {
-		return null;
-		//TODO:
+	public Trade updateTrade(@PathVariable int id, @RequestBody Trade updateTrade) {
+		updateTrade.setId(id);
+		return serv.updateTrade(updateTrade);
 	}
 	
 	@DeleteMapping("trades/{id}")
-	public Trade deleteTrade() {
-		//TODO:
-		return null;
+	public void deleteTrade(@PathVariable int id) {
+		  serv.deleteTrade(id);
 	}
 }

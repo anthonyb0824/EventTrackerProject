@@ -45,7 +45,7 @@ class TradeTest {
 	@Test
 	void test() {
 		assertNotNull(trade);
-		assertEquals("Fireball", trade.name);
+		assertEquals("Fireball", trade.getName());
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.skilldistillery.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +13,16 @@ public class Trade {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String name;
+	private Boolean status;
+	
+	private Double shares;
+	
+	private Integer price;
+	
+	private String description;
+	
+	@Column(name="profit_and_lose")
+	private double pAndl;
 	
 	public Trade() {
 		
@@ -26,18 +36,49 @@ public class Trade {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Boolean getStatus() {
+		return status;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
+	public Double getShares() {
+		return shares;
+	}
+
+	public void setShares(Double shares) {
+		this.shares = shares;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getpAndl() {
+		return pAndl;
+	}
+
+	public void setpAndl(double pAndl) {
+		this.pAndl = pAndl;
 	}
 
 	@Override
 	public String toString() {
-		return "Trade [id=" + id + ", name=" + name + "]";
+		return "Trade [id=" + id + ", status=" + status + ", shares=" + shares + ", price=" + price + ", description="
+				+ description + ", pAndl=" + pAndl + "]";
 	}
-	
-	
 }

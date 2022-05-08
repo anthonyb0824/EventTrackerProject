@@ -22,7 +22,11 @@ DROP TABLE IF EXISTS `trade` ;
 
 CREATE TABLE IF NOT EXISTS `trade` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(500) NOT NULL,
+  `status` TINYINT NOT NULL,
+  `shares` DOUBLE NOT NULL,
+  `price` INT NOT NULL,
+  `description` VARCHAR(45) NULL,
+  `profit_and_lose` DOUBLE NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,7 +46,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tradecentraldb`;
-INSERT INTO `trade` (`id`, `name`) VALUES (1, 'Fireball');
+INSERT INTO `trade` (`id`, `status`, `shares`, `price`, `description`, `profit_and_lose`) VALUES (1, True, 10, 100, NULL, 20);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price`, `description`, `profit_and_lose`) VALUES (2, False, 15, 10 , 'Open position; sell in one year', 8);
 
 COMMIT;
 

@@ -17,11 +17,12 @@ public class Trade {
 	
 	private Double shares;
 	
+	@Column(name="price_per_share")
 	private Integer price;
 	
 	private String description;
 	
-	@Column(name="profit_and_lose")
+	@Column(name="profit_and_loss")
 	private double pAndl;
 	
 	public Trade() {

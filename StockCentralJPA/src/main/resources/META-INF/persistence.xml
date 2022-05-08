@@ -8,6 +8,7 @@
 		<!-- Begin Entities Here -->
 
 		<class>com.skilldistillery.entities.Trade</class>
+		<class>com.skilldistillery.entities.User</class>
 
 		<!-- End Entities Here -->
 		<properties>

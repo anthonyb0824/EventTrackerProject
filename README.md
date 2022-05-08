@@ -31,7 +31,7 @@
 
 ## About The Project
 
-<p>Trade Central is a Dynamic Web Application that allows the user to track trades made the stock market by performing the following operations.</p>
+<p>Trade Central is a Dynamic Web Application that allows the user to track trades made in the stock market by performing the following operations.</p>
 <ol>
   <li><strong><em>C</em></strong>reate - Create a new Trade in the database.</li>
   <br>
@@ -41,8 +41,10 @@
   <br>
   <li><strong><em>D</em></strong>elete - Remove Existing Trades in the database</li>
 
-  <p>Trade Central will allow the admin to perform the following operations. </p>
+  <p>Trade Central will also allow the user to perform the following operations. </p>
 
+    <li><strong><em>C</em></strong>reate - Create a new Trade in the database.</li>
+    <br>
   <li><strong><em>U</em></strong>pdate - Update Predefined Fields of a Trade in the database</li>
   <br>
   <li><strong><em>D</em></strong>elete - Remove Existing Trades in the database</li>

@@ -40,11 +40,11 @@
   <li><strong><em>U</em></strong>pdate - Update Predefined Fields of a Trade in the database</li>
   <br>
   <li><strong><em>D</em></strong>elete - Remove Existing Trades in the database</li>
-
+  <br>
   <p>Trade Central will also allow the user to perform the following operations. </p>
 
-    <li><strong><em>C</em></strong>reate - Create a new User in the database.</li>
-    <br>
+  <li><strong><em>C</em></strong>reate - Create a new User in the database.</li>
+  <br>
   <li><strong><em>U</em></strong>pdate - Update Predefined Fields of a User in the database</li>
   <br>
   <li><strong><em>D</em></strong>elete - Remove Existing Users in the database</li>

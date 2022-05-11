@@ -1,10 +1,13 @@
 package com.skilldistillery.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -20,6 +23,9 @@ public class User {
 	private String lastName;
 	
 	private String username;
+	
+	@OneToMany(mappedBy="user")
+	private List<Trade> trades;
 	
 	public User() {
 		
@@ -55,6 +61,14 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public List<Trade> getTrades() {
+		return trades;
+	}
+
+	public void setTrades(List<Trade> trades) {
+		this.trades = trades;
 	}
 
 	@Override

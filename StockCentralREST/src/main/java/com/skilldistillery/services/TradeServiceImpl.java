@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.entities.Trade;
 import com.skilldistillery.repostitories.TradeRepository;
+import com.skilldistillery.repostitories.UserRepository;
 
 @Service
 public class TradeServiceImpl implements TradeService {
 	
 	@Autowired
 	private TradeRepository tradeRepo;
+	
+	@Autowired
+	private UserRepository userRepo;
 
 	@Override
 	public List<Trade> index() {
@@ -32,6 +36,8 @@ public class TradeServiceImpl implements TradeService {
 
 	@Override
 	public Trade createTrade(Trade newtrade) {
+		//for now all trades have the same user associated with it user_id 1
+		newtrade.setUser(userRepo.getById(1));
 		return tradeRepo.save(newtrade);
 	}
 

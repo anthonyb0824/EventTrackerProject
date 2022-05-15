@@ -117,6 +117,8 @@ Delete User can be tested with the following delete URI in Postman http://<stron
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+Full CRUD can be utilized for trades through the application.
+
 ## Contact
 
 <strong>Developers on Project</strong>

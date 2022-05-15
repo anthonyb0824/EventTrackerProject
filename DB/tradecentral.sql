@@ -36,7 +36,7 @@ DROP TABLE IF EXISTS `trade` ;
 
 CREATE TABLE IF NOT EXISTS `trade` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `status` TINYINT NOT NULL,
+  `status` VARCHAR(6) NOT NULL,
   `shares` DOUBLE NOT NULL,
   `price_per_share` INT NOT NULL,
   `description` VARCHAR(1000) NULL,
@@ -77,16 +77,16 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tradecentraldb`;
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (1, 0, 10, 100, 'Closed posistion; took a mad L', - 20, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (2, 1, 15, 10 , 'Open position; sell in one year', 8, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (3, 0, 100, 5, 'Good trade', 10, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (4, 1, 1000, 17, 'soild gain', 15, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (5, 0, 500, 24, 'little loss', -10 , 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (6, 1, 10000, 56, 'NICE!', 50, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (7, 0, 50000, 110, 'Heard about this trade on the internet; YOLOd my lifes saving; did not pay off', -2000, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (8, 1, 2000, 1143, NULL, 7, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (9, 0, 200, 235, NULL, 5, 1);
-INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (10, 1, 765, 340, NULL, 9, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (1, 'open', 10, 100, 'Closed posistion; took a mad L', - 20, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (2, 'closed', 15, 10 , 'Open position; sell in one year', 8, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (3, 'open', 100, 5, 'Good trade', 10, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (4, 'closed', 1000, 17, 'soild gain', 15, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (5, 'open', 500, 24, 'little loss', -10 , 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (6, 'closed', 10000, 56, 'NICE!', 50, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (7, 'open', 50000, 110, 'Heard about this trade on the internet; YOLOd my lifes saving; did not pay off', -2000, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (8, 'closed', 2000, 1143, NULL, 7, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (9, 'open', 200, 235, NULL, 5, 1);
+INSERT INTO `trade` (`id`, `status`, `shares`, `price_per_share`, `description`, `profit_and_loss`, `user_id`) VALUES (10, 'closed', 765, 340, NULL, 9, 1);
 
 COMMIT;
 

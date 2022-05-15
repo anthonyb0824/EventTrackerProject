@@ -40,15 +40,31 @@ public class TradeServiceImpl implements TradeService {
 		newtrade.setUser(userRepo.getById(1));
 		return tradeRepo.save(newtrade);
 	}
+	
+	@Override
+	public Trade createTrade(Trade newtrade, int userId) {
+		//for now all trades have the same user associated with it user_id 1
+		newtrade.setUser(userRepo.getById(userId));
+		return tradeRepo.save(newtrade);
+	}
 
 	@Override
-	public Trade updateTrade(Trade newTrade) {
-		return tradeRepo.saveAndFlush(newTrade);
+	public Trade updateTrade(Trade updateTrade) {
+		//for now all trades have the same user associated with it user_1
+		updateTrade.setUser(userRepo.getById(1));
+		return tradeRepo.saveAndFlush(updateTrade);
 	}
 
 	@Override
 	public void deleteTrade(int tradeId) {
 		 tradeRepo.deleteById(tradeId);
+	}
+
+	@Override
+	public Trade updateTrade(Trade updateTrade, int userId, int tradeId) {
+		updateTrade.setUser(userRepo.getById(userId));
+		updateTrade.setId(tradeId);
+		return tradeRepo.saveAndFlush(updateTrade);
 	}
 
 }

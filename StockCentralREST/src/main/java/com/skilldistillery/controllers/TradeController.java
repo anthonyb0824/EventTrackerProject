@@ -39,6 +39,7 @@ public class TradeController {
 	
 	@PutMapping("trades/{id}")
 	public Trade updateTrade(@PathVariable int id, @RequestBody Trade updateTrade) {
+		//set user here?
 		updateTrade.setId(id);
 		return serv.updateTrade(updateTrade);
 	}

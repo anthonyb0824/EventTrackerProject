@@ -17,7 +17,7 @@ public class Trade {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private Boolean status;
+	private String status;
 
 	private Double shares;
 
@@ -46,11 +46,11 @@ public class Trade {
 		this.id = id;
 	}
 
-	public Boolean getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 

@@ -10,6 +10,8 @@ public interface TradeService {
 		Trade createTrade(Trade newtrade);
 		Trade updateTrade(Trade newTrade);
 		void deleteTrade(int id);
+		Trade createTrade(Trade newtrade, int userId);
+		Trade updateTrade(Trade updateTrade, int userId, int tradeId);
 	}
 
 

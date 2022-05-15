@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.skilldistillery.entities.Trade;
 import com.skilldistillery.entities.User;
+import com.skilldistillery.services.TradeService;
 import com.skilldistillery.services.UserService;
 
 @RequestMapping("api")
@@ -21,6 +23,9 @@ public class UserController {
 
 	@Autowired
 	private UserService serv;
+	
+	@Autowired
+	private TradeService tradeServ;
 	
 	@GetMapping("users")
 	public List<User> index(){
@@ -33,8 +38,18 @@ public class UserController {
 	}
 	
 	@PostMapping("users")
-	public User createTrade(@RequestBody User newUser) {
+	public User createUser(@RequestBody User newUser) {
 		return serv.createUser(newUser);
+	}
+	
+	@PostMapping("users/{userId}/trade")
+	public Trade createTradeAsUser(@RequestBody Trade newTrade, @PathVariable int userId) {
+		return tradeServ.createTrade(newTrade, userId);
+	}
+	
+	@PutMapping("users/{userId}/trade/{tradeId}")
+	public Trade updateTrade(@RequestBody Trade updateTrade, @PathVariable int userId,@PathVariable int tradeId) {
+		return tradeServ.updateTrade(updateTrade, userId, tradeId);
 	}
 	
 	@PutMapping("users/{id}")

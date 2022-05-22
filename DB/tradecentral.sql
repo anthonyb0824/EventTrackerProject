@@ -25,7 +25,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `username` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
+  `password` VARCHAR(200) NULL,
+  `email` VARCHAR(45) NULL,
+  `phone_number` VARCHAR(45) NULL,
+  `role` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC))
 ENGINE = InnoDB;
 
 
@@ -67,7 +72,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tradecentraldb`;
-INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`) VALUES (1, 'Anthony ', 'Butler', 'AB1216');
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`, `password`, `email`, `phone_number`, `role`) VALUES (1, 'Anthony ', 'Butler', 'AB1216', 'ab1216', 'ab@gmail.com', '817-909-8888', 'admin');
 
 COMMIT;
 

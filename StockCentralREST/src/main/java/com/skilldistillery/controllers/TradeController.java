@@ -3,6 +3,7 @@ package com.skilldistillery.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.skilldistillery.services.TradeService;
 
 @RequestMapping("api")
 @RestController
+@CrossOrigin({"*","http://localhost:4202"})
 public class TradeController {
 	
 	@Autowired

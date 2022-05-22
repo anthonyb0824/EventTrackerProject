@@ -1,0 +1,77 @@
+<form *ngIf="!selected">
+  <label for="status">Status:</label>
+  <select name="status" [(ngModel)]="updateTrade.status">
+    <option value="open">Open</option>
+    <option value="closed">Closed</option>
+  </select>
+
+  <label for="shares">Shares</label>
+  <input type="number" name="shares" [(ngModel)]="newTrade.shares" >
+
+  <label for="price">Price</label>
+  <input type="number" name="price" [(ngModel)]="newTrade.price" >
+
+  <label for="pl">Profit/Loss</label>
+  <input type="number" name="pl" [(ngModel)]="newTrade.pAndl" >
+
+  <label for="description">Description</label>
+  <input type="text" name="description" [(ngModel)]="newTrade.description" >
+
+  <button class="btn btn-primary" type="submit" (click)="createTrade(newTrade)">Submit</button>
+</form>
+
+
+<table *ngIf="!selected">
+  <thead>
+    <tr>
+      <td>Id:</td>
+      <td>Status:</td>
+      <td>Shares:</td>
+      <td>Price:</td>
+      <td>p&l</td>
+      <td>Description:</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trade of trades">
+      <td>{{trade.id}}</td>
+      <td>{{trade.status}}</td>
+      <td>{{trade.shares}}</td>
+      <td>{{trade.price | currency}}</td>
+      <td>{{trade.pAndl}}</td>
+      <td>{{trade.description}}</td>
+      <td><button class="btn btn-danger" (click)="destroy(trade)">Delete</button></td>
+      <td><button class="btn btn-warning" (click)="setTrade(trade)">Edit</button></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+<div *ngIf="selected">
+  <h1>Update Trade: {{updateTrade.id}}</h1>
+  <form action="">
+    <label for="status">Status:</label>
+    <select name="status"  [(ngModel)]="updateTrade.status">
+      <option value="open">Open</option>
+      <option value="closed">Closed</option>
+    </select>
+
+    <label for="shares">Shares</label>
+    <input type="number" name="shares" [(ngModel)]="updateTrade.shares" >
+
+    <label for="price">Price</label>
+    <input type="number" name="price" [(ngModel)]="updateTrade.price" >
+
+    <label for="pl">Profit/Loss</label>
+    <input type="number" name="pl"[(ngModel)]="updateTrade.pAndl" >
+
+    <label for="description">Description</label>
+    <input type="text" name="description" [(ngModel)]="updateTrade.description" >
+
+    <button class="btn btn-primary" type="submit" (click)="updateTradef(updateTrade)">Submit</button>
+  </form>
+
+  <button (click)="selected=null"> back</button>
+</div>

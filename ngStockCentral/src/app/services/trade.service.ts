@@ -19,7 +19,7 @@ export class TradeService {
       .pipe(
         catchError((err: any) => {
           console.log(err);
-          return throwError('KABOOM');
+          return throwError('trade service - index');
         })
       );
   }

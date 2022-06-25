@@ -12,6 +12,10 @@ import { TradeListComponent } from './components/trade-list/trade-list.component
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -20,17 +24,19 @@ import { RegistrationComponent } from './components/registration/registration.co
     TradeListComponent,
     NavbarComponent,
     DashboardComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent,
+    LogoutComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule,
-
+    NgbModule
   ],
-  providers: [TradeService],
+  providers: [TradeService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

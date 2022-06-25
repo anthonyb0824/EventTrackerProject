@@ -9,10 +9,13 @@ import { TradeService } from 'src/app/services/trade.service';
 })
 export class TradeListComponent implements OnInit {
 
-newTrade: Trade = new Trade();
+ newTrade: Trade = new Trade();
  trades: Trade[] = [];
  selected : Trade | null = null;
  updateTrade:Trade = new Trade();
+
+ totalLoss : number = 0;
+ totalProfit:number= 0;
 
   constructor(private tradeSvc:TradeService) {
   }
@@ -25,7 +28,9 @@ newTrade: Trade = new Trade();
 
  loadTrades(){
    this.tradeSvc.index().subscribe(
-     suceess => this.trades = suceess,
+     suceess => {this.trades = suceess
+     this.getTotalLoss(this.trades);
+    },
      err => console.log('Failed to load trades' + err)
    )
  }
@@ -62,6 +67,22 @@ newTrade: Trade = new Trade();
      err => console.log(err)
 
    )
+ }
+
+ getTotalLoss(trades:Trade[]){
+   let totalPl = 0;
+   let totalProfit = 0 ;
+   for(let i = 0; i <trades.length;i++){
+    totalPl += trades[i].pAndl;
+    if(trades[i].status === 'closed'){
+      console.log(trades[i].pAndl)
+      totalProfit = (trades[i].price * trades[i].shares) * trades[i].pAndl;
+    }
+   }
+
+   this.totalLoss = totalPl;
+   this.totalProfit = totalProfit;
+
  }
 }
 

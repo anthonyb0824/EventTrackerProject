@@ -72,7 +72,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `tradecentraldb`;
-INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`, `password`, `email`, `phone_number`, `role`) VALUES (1, 'Anthony ', 'Butler', 'AB1216', 'ab1216', 'ab@gmail.com', '817-909-8888', 'admin');
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`, `password`, `email`, `phone_number`, `role`) VALUES (1, 'Anthony ', 'Butler', 'AB1216', 'ab1216', 'ab@gmail.com', '817-909-8888', NULL);
 
 COMMIT;
 

@@ -45,10 +45,10 @@ class TradeTest {
 	@Test
 	void test() {
 		assertNotNull(trade);
-		assertEquals(true, trade.getStatus());
+		assertEquals("open", trade.getStatus());
 		assertEquals(10.0, trade.getShares());
 		assertEquals(100, trade.getPrice());
-		assertEquals(20, trade.getpAndl());
+		assertEquals(-20, trade.getpAndl());
 	}
 
 }
